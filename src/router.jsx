@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import Home from "./components/Home";
 import NotFound from "./components/NotFound";
 import Login from "./components/Login";
@@ -12,7 +12,7 @@ import { AuthProvider } from "./context/AuthContext";
 import { Toaster } from "react-hot-toast";
 export default function AppRouter() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <AuthProvider>
         <NavbarComponent />
         <Routes>
@@ -47,6 +47,6 @@ export default function AppRouter() {
         </Routes>
       </AuthProvider>
       <Toaster position="top-right" reverseOrder={false} />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
